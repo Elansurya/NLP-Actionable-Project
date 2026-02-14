@@ -647,4 +647,5 @@ st.markdown("""
         <p>Powered by Random Forest & LSTM Neural Networks</p>
         <p>Built with Streamlit 🚀</p>
     </div>
+
 """, unsafe_allow_html=True)

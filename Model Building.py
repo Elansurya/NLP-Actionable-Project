@@ -1,4 +1,4 @@
-# Step 4: Machine Learning Model Building (Random Forest)
+#  Machine Learning Model Building (Random Forest)
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -188,4 +188,5 @@ for idx, sample_idx in enumerate(sample_indices, 1):
 
 print("=" * 70)
 print("✅ RANDOM FOREST MODEL BUILDING COMPLETE!")
+
 print("=" * 70)

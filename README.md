@@ -1,57 +1,188 @@
- 🛡️ ActionIntel: AI-Driven Message Prioritization System  
-**Bridging the gap between massive social media noise and actionable customer intelligence**
+# 🧠 Finding Message is Actionable or Not (Required Response or Not)
 
- 🌟 Executive Summary
-In today’s fast-paced digital world, customer support teams are overwhelmed by thousands of social media messages every day. Manually identifying which messages require urgent attention is inefficient and error-prone.
+## 🚀 Project Overview
 
-**ActionIntel** is an end-to-end **NLP-based intelligent system** that automatically classifies incoming messages as **Actionable** (requires response) or **Non-Actionable** (spam, greetings, casual chatter).  
-This solution helps organizations **prioritize critical issues faster**, reducing response time by up to **60%** and improving customer satisfaction.
+This project builds an NLP-based classification system that automatically identifies whether a customer message requires a response (Actionable) or not (Non-Actionable).
 
-🛠️ Tech Stack
-- **Language:** Python 3.10+
-- **NLP & Text Preprocessing:** Regex, NLTK (Tokenization, Lemmatization)
-- **Machine Learning:** Random Forest Classifier (high interpretability)
-- **Deep Learning:** LSTM Neural Network (context & sequence understanding)
-- **Text Vectorization:** TF-IDF, Keras Word Embeddings
-- **Web Interface:** Streamlit (Interactive Dashboard)
+The solution combines statistical NLP techniques and Deep Learning approaches to create an intelligent message triage system for customer support automation.
 
- 📊 Project Workflow
- 1️⃣ Exploratory Data Analysis (EDA)
-- Analysis of customer sentiment
-- Identification of platform-specific message patterns
-- Actionable vs non-actionable message distribution
+Domain: Customer Intelligence & Customer Experience
 
- 2️⃣ Advanced Text Cleaning
-- Removal of URLs, mentions, emojis, and stopwords
-- Preservation of intent-critical keywords
-- Normalization and lemmatization for better model performance
+---
 
- 3️⃣ Hybrid Modeling Approach
-**🔹 Random Forest (ML Model)**
-- Used for fast and interpretable classification
-- Feature importance analysis to identify **“power words”** like *crash*, *delay*, *refund*, *help*
+## 🎯 Problem Statement
 
-**🔹 LSTM (Deep Learning Model)**
-- Captures long-term dependencies in messages
-- Better understanding of context and sentence structure
-- Improved classification of complex customer complaints
+Organizations receive thousands of customer messages daily via email, chat, or social media.  
+However, not all messages require a response — some are acknowledgments, greetings, or general comments.
 
- 4️⃣ Live Deployment
-- Streamlit-based web application
-- Real-time message classification
-- Instant actionable vs non-actionable prediction
+The objective is to build a robust NLP classification model that:
 
+- Detects Actionable (1) messages requiring response  
+- Identifies Non-Actionable (0) messages  
+- Reduces response backlog  
+- Improves customer support efficiency  
 
- 📈 Performance Highlights
+(As described in the project documentation :contentReference[oaicite:1]{index=1})
 
-| Metric | Random Forest (ML) | LSTM (Deep Learning) |
-|------|-------------------|---------------------|
-| Accuracy | ~90% | **92%+** |
-| Primary Strength | Keyword & feature-based detection | Contextual sequence understanding |
-| Precision (Actionable) | High | **Superior** |
+---
 
+## 📊 Business Use Cases
 
+- 🎫 Customer Support Ticketing – Auto-flag messages requiring agent response  
+- 📱 Social Media Monitoring – Detect actionable tweets/posts  
+- 📧 Email Sorting – Separate informational emails from urgent ones  
+- 🧾 CRM Systems – Prioritize customer queries  
+- 🤖 Helpdesk Automation – Route actionable messages to human agents  
 
-🔹 Clone the Repository
-```bash
-https://github.com/Elansurya/NLP-Actionable-Project.git
+---
+
+## 📊 Dataset Overview
+
+Format: CSV  
+
+Variables:
+- message – Text content of customer message  
+- label – 1 (Actionable), 0 (Non-Actionable)
+
+Data includes:
+- Emails
+- Chat messages
+- Tweets
+- Support queries
+
+Example:
+- "My ticket hasn’t been confirmed yet, please help." → Actionable  
+- "Thanks for your quick support!" → Non-Actionable  
+
+(Example data described in project pages :contentReference[oaicite:2]{index=2})
+
+---
+
+## 🧹 Data Preprocessing
+
+Implemented complete NLP preprocessing pipeline:
+
+- Lowercase conversion  
+- Stopword removal  
+- Punctuation & special character cleaning  
+- Lemmatization (SpaCy / NLTK)  
+- Tokenization  
+
+Ensured text cleaning before vectorization (as per project guidelines :contentReference[oaicite:3]{index=3})
+
+---
+
+## 🧠 Feature Extraction Techniques
+
+### Statistical NLP
+- Bag of Words (CountVectorizer)
+- TF-IDF Vectorizer
+
+### Semantic Representation
+- Word2Vec / GloVe Embeddings
+
+---
+
+## 🔍 Feature Engineering
+
+- Used RandomForestClassifier for feature importance ranking  
+- Selected top contributing features  
+- Reduced noise & improved classification performance  
+
+---
+
+## 🤖 Model Building
+
+### Machine Learning Models
+- Logistic Regression
+- Random Forest
+- Support Vector Machine (SVM)
+- XGBoost
+
+### Deep Learning Model
+- LSTM using word embeddings
+
+Compared ML vs DL approaches for performance evaluation.
+
+---
+
+## 📈 Model Evaluation Metrics
+
+- Accuracy
+- Precision (Actionable class)
+- Recall (Optimized for actionable detection)
+- F1-Score
+- Confusion Matrix
+- ROC-AUC (optional)
+
+Focus: High Recall for actionable messages to avoid missing important queries.
+
+---
+
+## 🖥️ Deployment (Optional)
+
+Developed Streamlit application where users can:
+
+- Enter text message
+- Receive prediction (Actionable / Non-Actionable)
+- View confidence score
+
+Acts as an intelligent message triage assistant.
+
+---
+
+## 🏗️ Workflow Architecture
+
+Customer Messages  
+↓  
+Text Cleaning & Preprocessing  
+↓  
+Feature Extraction (TF-IDF / Embeddings)  
+↓  
+ML & DL Model Training  
+↓  
+Model Evaluation & Comparison  
+↓  
+Streamlit Deployment  
+
+---
+
+## ⚙️ Tech Stack
+
+Python  
+Scikit-learn  
+TensorFlow / Keras  
+NLTK / SpaCy  
+TF-IDF  
+CountVectorizer  
+Word2Vec  
+LSTM  
+RandomForest  
+XGBoost  
+Streamlit  
+
+---
+
+## 📌 Key Learnings
+
+- Difference between statistical NLP and deep learning NLP  
+- Importance of recall in support automation  
+- Feature importance interpretation  
+- End-to-end ML pipeline design  
+- NLP model deployment  
+
+---
+
+## 🔮 Future Enhancements
+
+- Transformer-based models (BERT)
+- Multi-language support
+- Real-time API integration
+- Automated ticket routing system
+- Class imbalance optimization techniques
+
+---
+
+## 👨‍💻 Author
+Elansurya K  
+Data Scientist | Machine Learning | NLP | SQL

@@ -1,4 +1,4 @@
-# Step 3: Feature Engineering (For Machine Learning)
+# Feature Engineering (For Machine Learning)
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
@@ -82,9 +82,9 @@ print("-" * 70)
 tfidf = TfidfVectorizer(
     max_features=3000, 
     ngram_range=(1, 2),
-    min_df=2,  # Ignore terms that appear in less than 2 documents
-    max_df=0.95,  # Ignore terms that appear in more than 95% of documents
-    sublinear_tf=True  # Apply sublinear tf scaling
+    min_df=2, 
+    max_df=0.95,  
+    sublinear_tf=True  
 )
 
 print(f"TF-IDF Configuration:")
@@ -228,4 +228,5 @@ print(f"  ✓ Created {X_train_tfidf.shape[1]} TF-IDF features")
 print(f"  ✓ Features include unigrams and bigrams")
 print(f"  ✓ Class distribution maintained through stratification")
 print(f"  ✓ Ready for model training!")
+
 print("=" * 70)
